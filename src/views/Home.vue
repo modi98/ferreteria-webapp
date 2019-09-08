@@ -25,7 +25,7 @@
               dark
               large
               rounded
-              @click="$router.push('/CreateClient')"
+              @click="$router.push('/createClient')"
             >Agregar cliente</v-btn>
           </v-flex>
           
