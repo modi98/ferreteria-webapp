@@ -9,7 +9,7 @@
         <span class="mr-2">Usuarios</span>
       </v-btn>
       <v-btn text >
-        <span class="mr-2">Clientes</span>
+        <span class="mr-2" @click="$router.push('/reportClients')">Clientes</span>
       </v-btn>
       <v-btn text @click="$router.push('/createClient')">
         <span class="mr-2">Agregar cliente</span>
