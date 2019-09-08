@@ -11,11 +11,11 @@
       <v-btn text >
         <span class="mr-2">Clientes</span>
       </v-btn>
-      <v-btn text @click="$router.push('/CreateClient')">
+      <v-btn text @click="$router.push('/createClient')">
         <span class="mr-2">Agregar cliente</span>
       </v-btn>
       <v-btn text >
-        <span class="mr-2">Cerrar sesión</span>
+        <span class="mr-2" @click="logout">Cerrar sesión</span>
       </v-btn>
     </v-app-bar>
 
@@ -75,8 +75,8 @@ export default {
     user: null,
     isSending: false
   }),
-  created() {
-    if (this.$cookies.isKey('authToken')) {
+  methods: {
+    getMe () {
       this.isSending = true
 
       let options = {
@@ -91,6 +91,17 @@ export default {
         this.user = response.data
         this.isSending = false
       })
+    },
+    logout () {
+      this.$cookies.remove('authToken')
+      this.$router.go(0)
+    }
+  },
+  created() {
+    if (this.$cookies.isKey('authToken')) {
+      this.getMe()
+    } else {
+      this.$router.push('/')
     }
   },
 };
