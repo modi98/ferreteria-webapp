@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import CreateClient from './views/CreateClient.vue'
 import ReportClients from './views/ReportClients.vue'
+import ReportUsers from './views/ReportUsers.vue'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/reportClients',
       name: 'reportClients',
       component: ReportClients
+    },
+    {
+      path: '/reportUsers',
+      name: 'reportUsers',
+      component: ReportUsers
     },
     {
       path: '/about',

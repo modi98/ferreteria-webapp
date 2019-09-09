@@ -9,7 +9,7 @@
         <v-flex xs12 class="text-center" pa-2>
           <v-text-field
             label="Correo"
-            solo
+            outlined
             v-model="email"
             :rules="[() => email.length >= 6]"
             required
@@ -20,7 +20,7 @@
         <v-flex xs12 class="text-center" pa-2>
           <v-text-field
             label="Contraseña"
-            solo
+            outlined
             type="password"
             v-model="password"
             :rules="[() => password.length >= 6]"
@@ -30,6 +30,7 @@
 
         <v-flex xs12 pa-2 class="text-center">
           <v-btn
+            large
             rounded
             class="primary-btn"
             :dark="valid"

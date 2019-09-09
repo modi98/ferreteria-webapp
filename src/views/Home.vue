@@ -13,8 +13,8 @@
             </v-row>
           </v-flex>
 
-          <v-flex xs6 class="text-center" pt-5>
-            <p class="display-1">En esta aplicación tú tienes el poder para administrar a tus clientes y tener toda información respaldada en la nube.</p>
+          <v-flex xs10 class="text-center" pt-5>
+            <p class="title">En esta aplicación tú tienes el poder para administrar a tus clientes y tener toda información respaldada en la nube.</p>
           </v-flex>
         </v-layout>
 
@@ -35,6 +35,7 @@
               dark
               large
               rounded
+              @click="$router.push('/reportClients')"
             >Lista de clientes</v-btn>
           </v-flex>
         </v-layout>

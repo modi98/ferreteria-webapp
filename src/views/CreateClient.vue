@@ -14,7 +14,7 @@
                 :rules="[() => nombre.length > 5 || 'Nombre no valido']"
                 lazy-validation
                 v-model="nombre"
-                solo
+                outlined
                 label="Nombre"
               ></v-text-field>
             </v-flex>
@@ -24,7 +24,7 @@
                 :rules="[() => telefono.length >= 8 || 'Teléfono no valida']"
                 lazy-validation
                 v-model="telefono"
-                solo
+                outlined
                 label="Teléfono"
               ></v-text-field>
             </v-flex>
@@ -34,7 +34,7 @@
                 :rules="[() => telefono.length >= 8 || 'Email no valida']"
                 lazy-validation
                 v-model="email"
-                solo
+                outlined
                 label="Correo"
               ></v-text-field>
             </v-flex>
@@ -44,7 +44,7 @@
                 :rules="[() => rfc.length > 11 && rfc.length < 14 || 'RFC no valida']"
                 lazy-validation
                 v-model="rfc"
-                solo
+                outlined
                 label="RFC"
               ></v-text-field>
             </v-flex>
@@ -53,7 +53,7 @@
               <v-text-field
                 :rules="[() => direccion.length > 5 || 'Dirección no valida']"
                 v-model="direccion"
-                solo
+                outlined
                 label="Dirección"
               ></v-text-field>
             </v-flex>
