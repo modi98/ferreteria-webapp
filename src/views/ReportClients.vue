@@ -76,7 +76,7 @@ export default {
       this.$http.get('clients', options).then(response => {
         this.clients = response.data
         this.isLoading = false
-      }, response => {
+      }, () => {
         this.isLoading = false
       })
     }

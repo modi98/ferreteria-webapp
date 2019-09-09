@@ -216,7 +216,7 @@ export default {
         }
       }
 
-      this.$http.post('users', this.newUser, options).then(response => {
+      this.$http.post('users', this.newUser, options).then(() => {
         this.isSending = false
         this.getClients()
         this.newUser = {

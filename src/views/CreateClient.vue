@@ -150,7 +150,7 @@ export default {
         rfc: this.rfc
       }
 
-      this.$http.post('clients', payload, options).then(response => {
+      this.$http.post('clients', payload, options).then(() => {
         this.nombre = '',
         this.email = '',
         this.telefono = '',
@@ -159,7 +159,7 @@ export default {
         this.dialogSuccess = true
         this.$refs.createForm.reset()
         this.isSending = false
-      }, response => {
+      }, () => {
         this.isSending = false
       })
     }
