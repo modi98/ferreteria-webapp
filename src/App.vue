@@ -32,6 +32,8 @@
       </v-app-bar>
 
       <v-navigation-drawer
+        class="deep-purple accent-4"
+        dark
         v-model="drawer"
         absolute
         temporary
@@ -39,12 +41,15 @@
         <v-list
           nav
           dense
+          class="pt-5"
         >
           <v-list-item-group
             active-class="deep-purple--text text--accent-4"
           >
             <v-list-item v-if="user.role === 'admin'" @click="$router.push('/reportUsers')">
-              <v-list-item-title>Usuarios</v-list-item-title>
+              <v-list-item-content>
+                <v-list-item-title>Usuarios</v-list-item-title>
+              </v-list-item-content>
             </v-list-item>
 
             <v-list-item v-if="user.role === 'admin'" @click="$router.push('/reportClients')">
@@ -54,12 +59,13 @@
             <v-list-item @click="$router.push('/createClient')">
               <v-list-item-title>Agregar cliente</v-list-item-title>
             </v-list-item>
-
-            <v-list-item @click="logout">
-              <v-list-item-title>Cerrar sesión</v-list-item-title>
-            </v-list-item>
           </v-list-item-group>
         </v-list>
+        <template v-slot:append>
+          <div class="pa-2">
+            <v-btn block @click="logout">Logout</v-btn>
+          </div>
+        </template>
       </v-navigation-drawer>
     </div>
 
@@ -152,6 +158,7 @@ export default {
 </script>
 
 <style>
+  @import url("https://fonts.googleapis.com/css?family=Questrial");
   .v-toolbar {
     background-color: #7264C9 !important;
   }
@@ -162,5 +169,9 @@ export default {
 
   .primary-background {
     background-color: #7264C9 !important;
+  }
+
+  .v-application {
+    font-family: 'Montserrat', sans-serif;
   }
 </style>

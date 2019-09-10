@@ -14,6 +14,7 @@
             :rules="[() => email.length >= 6]"
             required
             validate-on-blur
+            @keyup.enter.native="login"
           ></v-text-field>
         </v-flex>
         
@@ -25,6 +26,7 @@
             v-model="password"
             :rules="[() => password.length >= 6]"
             required
+            @keyup.enter.native="login"
           ></v-text-field>
         </v-flex>
 
