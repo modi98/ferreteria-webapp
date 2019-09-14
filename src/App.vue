@@ -141,7 +141,7 @@ export default {
       this.$http.get('users/me', options).then(response => {
         this.user = response.data
         this.isSending = false
-      }, response => {
+      }, () => {
         this.isSending = false
       })
     },
