@@ -86,6 +86,8 @@ export default {
         this.isSending = false
         this.$cookies.set('authToken', response.data.token, '30d')
         this.$router.go(0)
+      }, response => {
+        this.isSending = false
       })
     }
   }

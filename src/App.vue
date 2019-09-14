@@ -8,11 +8,11 @@
       <v-btn v-if="user.role === 'admin'" text @click="$router.push('/reportUsers')">
         <span class="mr-2">Usuarios</span>
       </v-btn>
-      <v-btn v-if="user.role === 'admin'" text @click="$router.push('/reportClients')">
-        <span class="mr-2">Clientes</span>
-      </v-btn>
       <v-btn text @click="$router.push('/createClient')">
         <span class="mr-2">Agregar cliente</span>
+      </v-btn>
+      <v-btn v-if="user.role === 'admin'" text @click="$router.push('/reportClients')">
+        <span class="mr-2">Clientes</span>
       </v-btn>
       <v-btn text @click="logout">
         <span class="mr-2">Cerrar sesión</span>
@@ -23,6 +23,7 @@
       <v-app-bar
         class="primary-background"
         dark
+        app
       >
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         
@@ -35,8 +36,8 @@
         class="deep-purple accent-4"
         dark
         v-model="drawer"
-        absolute
         temporary
+        app
       >
         <v-list
           nav
@@ -140,6 +141,8 @@ export default {
       this.$http.get('users/me', options).then(response => {
         this.user = response.data
         this.isSending = false
+      }, response => {
+        this.isSending = false
       })
     },
     logout () {
@@ -153,8 +156,8 @@ export default {
     } else {
       this.$router.push('/')
     }
-  },
-};
+  }
+}
 </script>
 
 <style>
